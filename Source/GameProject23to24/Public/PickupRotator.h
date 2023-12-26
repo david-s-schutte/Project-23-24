@@ -17,7 +17,7 @@ public:
 	UPickupRotator();
 
 private:
-	UPROPERTY(EditInstanceOnly);
+	UPROPERTY(EditInstanceOnly)
 	float RotSpeed;
 
 protected:
