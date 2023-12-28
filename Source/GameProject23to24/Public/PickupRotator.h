@@ -15,6 +15,12 @@ class GAMEPROJECT23TO24_API UPickupRotator : public UActorComponent
 public:	
 	// Sets default values for this component's properties
 	UPickupRotator();
+	UPROPERTY(EditInstanceOnly)
+	bool roll;
+	UPROPERTY(EditInstanceOnly)
+	bool pitch;
+	UPROPERTY(EditInstanceOnly)
+	bool yaw;
 
 private:
 	UPROPERTY(EditInstanceOnly)

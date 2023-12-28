@@ -34,7 +34,14 @@ void UPickupRotator::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 void UPickupRotator::TickRotateObject(const float& DeltaTime)
 {
 	FRotator CurrentActorRotation = GetOwner()->GetActorRotation();
-	CurrentActorRotation.Yaw += DeltaTime * RotSpeed;
+
+	if (roll)
+		CurrentActorRotation.Roll += DeltaTime * RotSpeed;
+	if (pitch)
+		CurrentActorRotation.Pitch += DeltaTime * RotSpeed;
+	if(yaw)
+		CurrentActorRotation.Yaw += DeltaTime * RotSpeed;
+	
 	GetOwner()->SetActorRotation(CurrentActorRotation);
 }
 
