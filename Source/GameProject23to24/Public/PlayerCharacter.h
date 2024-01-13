@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Camera/CameraComponent.h"
 #include "PlayerCharacter.generated.h"
 
 UCLASS()
@@ -20,11 +21,19 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
+	//Control modifiers
 	UPROPERTY(EditInstanceOnly)
 	bool InvertMouseY;
-	
+
 	UPROPERTY(EditInstanceOnly)
 	float LookSensitivity;
+
+	UPROPERTY(EditInstanceOnly)
+	float SprintModifier;
+
+
+	//Pointers to blueprint components
+	UCameraComponent* Camera;
 
 public:	
 	// Called every frame
@@ -38,4 +47,8 @@ public:
 	void Strafe(float value);
 	void LookUp(float value);
 	void Turn(float value);
+
+	//Sprint Functions
+	void SprintStart();
+	void SprintEnd();
 };
